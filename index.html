@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArtroFlex ACTIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2 5 13.5h6.5L10 22l9-12h-6.5z"/></symbol>
+ <symbol id="i-run" viewBox="0 0 24 24"><circle cx="15.5" cy="4" r="2"/><path d="M5.5 11.5 9.5 8h4.5l2.5 3.5 3.5 1M12.5 8.5l-2 5.5 3.5 3.2V22M10.5 14l-2.5 4.5H4"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 19.5 5.5v5.5c0 5-3.2 8.6-7.5 10.5C7.7 19.6 4.5 16 4.5 11V5.5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+ <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3.5C11 3.5 4.5 8.5 4.5 16c0 1.5.3 3 .9 4.3C13 20.3 20 15 20 3.5z"/><path d="M5.4 20.3C7.5 15.5 11 12 15.5 9"/></symbol>
+ <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7.5 3.5h9V9a4.5 4.5 0 0 1-9 0zM7.5 5.5h-3V7a4 4 0 0 0 3.6 4M16.5 5.5h3V7a4 4 0 0 1-3.6 4M12 13.5v3.5M8 21h8l-1-4H9z"/></symbol>
+ <symbol id="i-people" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3"/><circle cx="5" cy="9.5" r="2.2"/><circle cx="19" cy="9.5" r="2.2"/><path d="M6.5 19.5c0-3.5 2.5-6.3 5.5-6.3s5.5 2.8 5.5 6.3zM1.5 18.5c0-2.6 1.6-4.6 3.8-4.6M22.5 18.5c0-2.6-1.6-4.6-3.8-4.6"/></symbol>
+ <symbol id="i-bars" viewBox="0 0 24 24"><path d="M5.5 20v-6M12 20V9M18.5 20V4" stroke-width="4" stroke-linecap="butt"/></symbol>
+ <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5V17"/></symbol>
+ <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 5.5h11.5V16H2zM13.5 9h4.5l3.5 3.5V16h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></symbol>
+ <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5h-1.5"/></symbol>
+ <symbol id="i-knee" viewBox="0 0 24 24"><path d="M8.5 2v5.5c0 1.8 1.6 3 3.5 3s3.5-1.2 3.5-3V2M8.5 22v-5.5c0-1.8 1.6-3 3.5-3s3.5 1.2 3.5 3V22"/><path d="M6.3 9.3c-1.7 1.5-1.7 3.9 0 5.4M17.7 9.3c1.7 1.5 1.7 3.9 0 5.4"/></symbol>
+ <symbol id="i-arm" viewBox="0 0 24 24"><path d="M3.5 20.5c.5-5 1.5-9 4-12.5L9.5 5l3.5-1 .5 2-2.5 1.5 1 3.5c1.5-1.5 4-2 6-1 2.5 1.2 3.5 4 2.5 6.5-1.2 3-4 4-7 4z"/><path d="M14 16.6s-2.3-1.4-2.3-3c0-.9.6-1.5 1.3-1.5.5 0 .8.3 1 .6.2-.3.5-.6 1-.6.7 0 1.3.6 1.3 1.5 0 1.6-2.3 3-2.3 3z"/></symbol>
+ <symbol id="i-medkit" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4.5h6V7M12 10.5v6M9 13.5h6"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5S3.5 15.5 3.5 9A4.6 4.6 0 0 1 12 6.4 4.6 4.6 0 0 1 20.5 9c0 6.5-8.5 11.5-8.5 11.5z"/></symbol>
+ <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2.5 3.5 6.5v11L12 21.5l8.5-4v-11zM3.5 6.5 12 10.5l8.5-4M12 10.5v11M7.8 4.5l8.5 4"/></symbol>
+ <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<header><div class="top"><a class="logo" href="#hero">ArtroFlex <span>ACTIVE</span></a><a class="hdr-cta" href="#order-name" data-to-order data-track="cta-header">Jetzt bestellen</a><nav aria-label="Hauptnavigation">
+<a href="#joints" data-track="nav-joints">Gelenke</a><a href="#composition" data-track="nav-composition">Zusammensetzung</a><a href="#reviews" data-track="nav-reviews">Bewertungen</a><a href="#research" data-track="nav-how">So bestellen Sie</a><a href="#order-name" data-to-order data-track="nav-order">Bestellung</a>
+</nav></div></header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="hero" aria-label="Angebot ArtroFlex ACTIVE">
+ <div class="wrap hero-grid">
+  <div class="hero-head" data-track="sec-hero">
+   <h1><span>Hilft gegen</span> <span class="red">Gelenkschmerzen!</span></h1>
+  </div>
+
+  <div class="hero-art">
+   <img class="knee" src="assets/img/hero-knee.jpg" width="545" height="760" alt="">
+   <img class="pack" src="assets/img/hero-pack.jpg" width="410" height="470" alt="Dose und Packung ArtroFlex ACTIVE, 30 Kapseln">
+  </div>
+
+  <ul class="check-list hero-feats" data-track="sec-hero-feats">
+   <li class="feat"><span class="ic"><svg class="i"><use href="#i-bolt"/></svg></span><div><h3>Lindert Schmerzen und Steifheit</h3><p>ArtroFlex ACTIVE enthält Inhaltsstoffe, die Gelenkschmerzen lindern</p></div></li>
+   <li class="feat"><span class="ic"><svg class="i"><use href="#i-run"/></svg></span><div><h3>Stellt die Beweglichkeit der Gelenke wieder her</h3><p>Hilft Ihnen, sich frei zu bewegen</p></div></li>
+   <li class="feat"><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><div><h3>Schützt vor Gelenkverschleiß</h3><p>Unterstützt die Regeneration des Knorpels</p></div></li>
+   <li class="feat"><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><div><h3>Natürliche Formel mit 10 Inhaltsstoffen</h3><p>Ohne Nebenwirkungen</p></div></li>
+  </ul>
+
+  <aside class="card price-card" aria-label="Angebot" data-track="sec-hero-form">
+   <div class="badge">RABATT −50%</div>
+   <p class="today">Nur heute für <span class="red">39 €</span></p>
+   <span class="old">78 €</span>
+   <p class="price">39,00 €</p>
+   <div class="lead" data-lead-root="hero">
+    <div data-f="card">
+     <form class="order-form" data-f="form" action="api/lead.php" method="post" novalidate aria-label="Bestellformular oben">
+      <div class="field">
+       <input id="hero-name" data-f="name" name="name" type="text" autocomplete="name" autocapitalize="words" maxlength="60" placeholder="Vor- und Nachname" aria-label="Vor- und Nachname" required aria-describedby="hero-name-err">
+       <p class="field-err" id="hero-name-err" data-f="name-err" hidden>Bitte geben Sie Ihren Namen ein.</p>
+      </div>
+      <div class="field">
+       <div class="phone"><span class="phone-pre" aria-hidden="true">+49</span><input id="hero-phone" data-f="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="18" placeholder="Telefonnummer" aria-label="Telefonnummer, Ländervorwahl +49 ist bereits eingetragen" required aria-describedby="hero-phone-err"></div>
+       <p class="field-err" id="hero-phone-err" data-f="phone-err" hidden>Bitte geben Sie eine gültige Telefonnummer ein.</p>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="hero-website">Leer lassen</label><input id="hero-website" data-f="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="field consent" data-f="consent-field">
+       <input id="hero-consent" data-f="consent" name="consent" type="checkbox" value="1" checked aria-describedby="hero-consent-err">
+       <label for="hero-consent">Ich habe die <a href="privacy.html" target="_blank" rel="noopener" data-track="link-privacy-hero">Datenschutzerklärung</a> gelesen und bitte um einen Rückruf.</label>
+       <p class="field-err" id="hero-consent-err" data-f="consent-err" hidden>Bitte bestätigen Sie Ihre Anfrage, bevor Sie fortfahren.</p>
+      </div>
+      <p class="form-error" data-f="error" role="alert" hidden>Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.</p>
+      <button type="submit" data-f="submit" data-track="btn-submit-hero"><span class="btn-label">JETZT BESTELLEN</span><span class="btn-busy" aria-hidden="true">Wird gesendet…</span></button>
+     </form>
+    </div>
+    <div class="success" data-f="success" hidden tabindex="-1">
+     <div class="success-ico" aria-hidden="true">✓</div>
+     <p class="success-title">Anfrage erhalten!</p>
+     <p>Unser Berater ruft Sie unter der Nummer <strong data-f="success-phone"></strong> an.</p>
+    </div>
+   </div>
+   <p class="secure"><svg class="i"><use href="#i-lock"/></svg>Ihre Daten sind geschützt</p>
+  </aside>
+ </div>
+
+ <div class="hero-strip">
+  <div class="wrap strip" data-track="sec-hero-strip">
+   <div><span class="ic"><svg class="i"><use href="#i-trophy"/></svg></span><p><b>Nr. 1</b><br>für gesunde Gelenke</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><p>Natürliche<br>Inhaltsstoffe</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><p>Sicher<br>in der Anwendung</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-people"/></svg></span><p>Tausende zufriedene Kunden</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-bars"/></svg></span><p>Verbessert die Flexibilität<br>Unterstützt die Beweglichkeit<br>Stärkt die Gelenke</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= JOINTS ================= -->
+<section id="joints" aria-label="Informationen über die Gelenke">
+ <div class="wrap">
+  <div class="j-top" data-track="sec-joints">
+   <div class="j-text">
+    <h2>Degenerativ-dystrophische Erkrankungen der <span class="red">Gelenke</span></h2>
+    <p>Diese Gruppe von Erkrankungen ist weit verbreitet. Laut WHO ist Arthrose weltweit eine der häufigsten Ursachen für Behinderungen.</p>
+    <ul class="check-list j-list">
+     <li><img src="assets/img/ico-cartilage.jpg" width="82" height="82" alt=""><div><h3>Knorpelverschleiß</h3><p>Der Knorpel verliert seine Elastizität und kann seine Aufgaben nicht mehr erfüllen.</p></div></li>
+     <li><img src="assets/img/ico-inflammation.jpg" width="82" height="82" alt=""><div><h3>Entzündung</h3><p>Verursacht Schmerzen, Schwellungen und eingeschränkte Bewegung.</p></div></li>
+     <li><img src="assets/img/ico-synovial.jpg" width="82" height="82" alt=""><div><h3>Veränderungen der Gelenkflüssigkeit</h3><p>Ihre Menge und Qualität nehmen ab – das Gelenk wird schlechter abgefedert.</p></div></li>
+    </ul>
+   </div>
+   <figure class="j-art fade-l" style="margin-top:0;margin-bottom:0">
+    <img src="assets/img/knees-compare.jpg" width="546" height="652" alt="Vergleich eines gesunden und eines geschädigten Kniegelenks">
+    <span class="pill p1">Gesundes Gelenk</span>
+    <span class="pill p2">Geschädigtes Gelenk</span>
+   </figure>
+  </div>
+
+  <div class="card artrosi" data-track="sec-artrosi">
+   <div>
+    <h2>Arthrose (Osteoarthrose)</h2>
+    <p class="sub">– Abbau des Gelenkknorpels.</p>
+    <p>Arthrose ist eine chronische Erkrankung, bei der sich der Gelenkknorpel langsam abbaut. Das führt zu Verformungen der Knochen, Entzündungen und eingeschränkter Beweglichkeit.</p>
+   </div>
+   <div class="stages">
+    <figure><figcaption>Gesundes Gelenk</figcaption><img src="assets/img/stage-1.jpg" width="152" height="194" alt="Knie mit gesundem Knorpel"></figure>
+    <span class="arr" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+    <figure><figcaption>Knorpelverschleiß</figcaption><img src="assets/img/stage-2.jpg" width="152" height="194" alt="Knie mit abgenutztem Knorpel"></figure>
+    <span class="arr" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+    <figure><figcaption>Geschädigtes Gelenk</figcaption><img src="assets/img/stage-3.jpg" width="168" height="194" alt="Knie mit geschädigtem Gelenk"></figure>
+   </div>
+  </div>
+
+  <div class="card others" data-track="sec-others">
+   <h2>Weitere Gelenkerkrankungen</h2>
+   <p class="lead">Es gibt verschiedene Formen von Arthritis, darunter:</p>
+   <div class="grid4">
+    <article class="pcard"><img src="assets/img/d-artrite.jpg" width="231" height="139" alt="Entzündetes Knie" loading="lazy"><div><h3>Arthritis</h3><p>Entzündlicher Prozess, der Schmerzen, Schwellungen und eingeschränkte Bewegung verursacht.</p></div></article>
+    <article class="pcard"><img src="assets/img/d-reumatoide.jpg" width="222" height="139" alt="Hand mit entzündeten Gelenken" loading="lazy"><div><h3>Rheumatoide Arthritis</h3><p>Autoimmunerkrankung, die Gelenke und Bindegewebe befällt.</p></div></article>
+    <article class="pcard"><img src="assets/img/d-gotta.jpg" width="226" height="139" alt="Fuß mit entzündetem großen Zeh" loading="lazy"><div><h3>Gicht</h3><p>Entsteht durch Störungen des Stoffwechsels.</p></div></article>
+    <article class="pcard"><img src="assets/img/d-artrosi.jpg" width="228" height="139" alt="Schmerzen im unteren Rücken" loading="lazy"><div><h3>Arthrose</h3><p>Langsamer Abbau des Knorpels, Verformung der Knochen und eingeschränkte Beweglichkeit.</p></div></article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= COMPOSITION ================= -->
+<section id="composition" aria-label="Zusammensetzung und Gelenkgesundheit">
+ <div class="wrap">
+  <div class="c-top" data-track="sec-recovery">
+   <div class="c-text">
+    <h2>ArtroFlex <span class="red">ACTIVE</span><br>zur Regeneration<br><span class="red">nach Verletzungen</span></h2>
+    <p>Nach Stürzen, Verletzungen oder übermäßiger Belastung brauchen die Gelenke gezielte Unterstützung, um wieder optimal zu funktionieren.</p>
+    <ul class="check-list c-list">
+     <li><span class="ic sm"><svg class="i"><use href="#i-run"/></svg></span><div><h3>Beschleunigt die Regeneration</h3><p>Unterstützt die Erneuerung des Gelenkgewebes.</p></div></li>
+     <li><span class="ic sm"><svg class="i"><use href="#i-knee"/></svg></span><div><h3>Stärkt die Struktur</h3><p>Trägt dazu bei, Knorpel und Bänder stabil zu halten.</p></div></li>
+     <li><span class="ic sm"><svg class="i"><use href="#i-arm"/></svg></span><div><h3>Lindert Entzündungen</h3><p>Hilft, Schwellungen und Beschwerden nach Belastung oder Verletzung zu verringern.</p></div></li>
+     <li><span class="ic sm"><svg class="i"><use href="#i-medkit"/></svg></span><div><h3>Beugt Rückfällen vor</h3><p>Unterstützt die Beweglichkeit und Stabilität der Gelenke auf Dauer.</p></div></li>
+    </ul>
+   </div>
+   <div class="c-photo fade-l"><img src="assets/img/bench.jpg" width="538" height="648" alt="Ein älterer und ein junger Mann sitzen lächelnd auf einer Parkbank" loading="lazy"></div>
+  </div>
+
+  <div class="stress" data-track="sec-stress">
+   <h2>Für jede Belastung der Gelenke</h2>
+   <p class="lead">ArtroFlex ACTIVE unterstützt Sie in vielen Situationen des Alltags.</p>
+   <div class="grid4">
+    <article class="pcard"><img src="assets/img/c-sport.jpg" width="229" height="210" alt="Frau beim Training mit einer Hantel" loading="lazy"><div><h3>Sport</h3><p>Unterstützt die Gelenke beim Training und bei der Erholung nach intensiver Anstrengung.</p></div></article>
+    <article class="pcard"><img src="assets/img/c-age.jpg" width="229" height="210" alt="Lächelnde ältere Frau bei einem Spaziergang" loading="lazy"><div><h3>Jedes Alter</h3><p>Hilft, Beweglichkeit und Flexibilität auf Dauer zu erhalten.</p></div></article>
+    <article class="pcard"><img src="assets/img/c-work.jpg" width="229" height="210" alt="Arbeiter trägt einen schweren Sack" loading="lazy"><div><h3>Körperliche Arbeit</h3><p>Ideal bei langer körperlicher Belastung und schwerer Arbeit.</p></div></article>
+    <article class="pcard"><img src="assets/img/c-sit.jpg" width="229" height="210" alt="Frau sitzt am Computer" loading="lazy"><div><h3>Langes Sitzen</h3><p>Hilft gegen steife Gelenke durch Bewegungsmangel.</p></div></article>
+   </div>
+  </div>
+
+  <div class="card formula" data-track="sec-formula">
+   <div class="formula-left">
+    <h2>Eine umfassende Formel<br>für gesunde Gelenke</h2>
+    <p class="lead">10 ausgewählte Inhaltsstoffe.</p>
+    <img src="assets/img/hero-pack.jpg" width="410" height="470" alt="Packung ArtroFlex ACTIVE" loading="lazy">
+   </div>
+   <ul class="ingr">
+    <li><img src="assets/img/i-glucosamina.jpg" width="72" height="72" alt="" loading="lazy">Glucosamin</li>
+    <li><img src="assets/img/i-condroitina.jpg" width="72" height="72" alt="" loading="lazy">Chondroitin</li>
+    <li><img src="assets/img/i-collagene.jpg" width="72" height="72" alt="" loading="lazy">Kollagen</li>
+    <li><img src="assets/img/i-msm.jpg" width="72" height="72" alt="" loading="lazy">MSM</li>
+    <li><img src="assets/img/i-curcuma.jpg" width="72" height="72" alt="" loading="lazy">Kurkuma</li>
+    <li><img src="assets/img/i-vitc.jpg" width="72" height="72" alt="" loading="lazy">Vitamin C</li>
+    <li><img src="assets/img/i-zenzero.jpg" width="72" height="72" alt="" loading="lazy">Ingwer</li>
+    <li><img src="assets/img/i-boswellia.jpg" width="72" height="72" alt="" loading="lazy">Boswellia</li>
+    <li><img src="assets/img/i-pepe.jpg" width="72" height="72" alt="" loading="lazy">Schwarzer Pfeffer</li>
+    <li><img src="assets/img/i-artiglio.jpg" width="72" height="72" alt="" loading="lazy">Teufelskralle</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" aria-label="Bewertungen">
+ <div class="wrap">
+  <div class="rev-head">
+   <p class="eyebrow">ARTROFLEX ACTIVE</p>
+   <h2>Echte Bewertungen von Menschen, die sich für <em>ArtroFlex ACTIVE</em> entschieden haben</h2>
+   <p>Wahre Geschichten von Menschen, die ihre Bewegungsfreiheit und mehr Lebensqualität zurückgewonnen haben.</p>
+  </div>
+  <div class="reviews" data-track="sec-reviews">
+   <article class="review">
+    <img src="assets/img/r-lucia.jpg" width="481" height="236" alt="Sabine" loading="lazy">
+    <div class="body">
+     <blockquote>Schon nach wenigen Wochen fühle ich mich viel leichter. Meine Knie tun nicht mehr so weh wie früher, und ich schaffe meine täglichen Spaziergänge. Früher habe ich Treppen und längere Wege gemieden, jetzt fühle ich mich wieder sicher und kann mich ohne dieses Gefühl der Steifheit bewegen. ArtroFlex ACTIVE hat mir wirklich geholfen – es gehört inzwischen zu meinem Alltag, und ich möchte nicht mehr darauf verzichten.</blockquote>
+     <p class="who"><b>Sabine, 45 Jahre</b><span>München</span></p>
+    </div>
+   </article>
+   <article class="review">
+    <img src="assets/img/r-maria.jpg" width="470" height="236" alt="Monika" loading="lazy">
+    <div class="body">
+     <blockquote>Morgens bin ich weniger steif und bewege mich leichter. Es ist zu einem kleinen täglichen Ritual geworden, das mir hilft, mich besser zu fühlen. Ich habe vor drei Monaten mit ArtroFlex ACTIVE angefangen und kann sagen: Man spürt den Unterschied – weniger Schmerzen, mehr Bewegung und eine viel bessere Lebensqualität. Ich empfehle es allen, die wie ich wieder ohne Einschränkungen tun möchten, was sie lieben.</blockquote>
+     <p class="who"><b>Monika, 67 Jahre</b><span>Hamburg</span></p>
+    </div>
+   </article>
+   <article class="review noimg">
+    <div class="body">
+     <blockquote>Ich arbeite im Stehen, und am Ende des Tages waren meine Knie immer schwer und schmerzten. Ich habe verschiedene Produkte ausprobiert, aber mit ArtroFlex ACTIVE habe ich endlich Linderung gefunden. Nach einigen Wochen fühlen sich meine Gelenke freier an, und ich kann mich ohne die ständigen Beschwerden bewegen. Jetzt gehe ich meinem Alltag wieder mit viel mehr Energie nach.</blockquote>
+     <p class="who"><b>Petra, 59 Jahre</b><span>Köln</span></p>
+    </div>
+   </article>
+  </div>
+  <div class="strip rev-strip">
+   <div><span class="ic"><svg class="i"><use href="#i-knee"/></svg></span><p>Weniger Schmerzen<br>und Steifheit</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-run"/></svg></span><p>Mehr<br>Bewegungsfreiheit</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-heart"/></svg></span><p>Mehr<br>Lebensqualität</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= HOW TO ORDER + ORDER ================= -->
+<section id="research" aria-label="So funktioniert die Bestellung">
+ <div class="wrap">
+  <div class="how-head">
+   <h2>So funktioniert <span class="red">die Bestellung</span></h2>
+   <p>ArtroFlex ACTIVE zu bestellen ist einfach und sicher. Es dauert nur wenige Minuten.</p>
+  </div>
+  <div class="steps" data-track="sec-how">
+   <article class="step"><figure><img src="assets/img/step-1.jpg" width="180" height="180" alt="Formular und Stift" loading="lazy"><span class="num" style="--nx:-10%">1</span></figure><h3>Formular ausfüllen</h3><p>Geben Sie Ihren Namen und Ihre Telefonnummer ein, um einen Rabatt auf das Produkt zu erhalten.</p></article>
+   <span class="chev" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span>
+   <article class="step"><figure><img src="assets/img/step-2.jpg" width="180" height="180" alt="Berater mit Headset" loading="lazy"><span class="num" style="--nx:-8%">2</span></figure><h3>Details bestätigen</h3><p>Unser Berater ruft Sie an, um die Bestellung zu bestätigen und alle Ihre Fragen zu beantworten.</p></article>
+   <span class="chev" aria-hidden="true"><svg class="i"><use href="#i-chev"/></svg></span>
+   <article class="step"><figure><img src="assets/img/step-3.jpg" width="180" height="180" alt="Übergabe eines Pakets" loading="lazy"><span class="num" style="--nx:-15%">3</span></figure><h3>Produkt erhalten</h3><p>Die Lieferung erfolgt innerhalb weniger Tage. Sie bezahlen erst, wenn Sie die Ware erhalten.</p></article>
+  </div>
+  <div class="strip trust" data-track="sec-trust">
+   <div><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><p>Schnelle und<br>sichere Lieferung</p></div>
+   <div><span class="ic white"><svg class="i"><use href="#i-shield"/></svg></span><p>Bezahlung bei Lieferung</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-lock"/></svg></span><p>Ihre Daten sind geschützt</p></div>
+   <div><span class="ic"><svg class="i"><use href="#i-headset"/></svg></span><p>Kundenservice<br>bei jedem Bestellschritt</p></div>
+  </div>
+ </div>
+
+ <div class="order" id="order">
+  <div class="wrap order-grid">
+   <div class="order-text" data-track="sec-order">
+    <h2>Bestellen Sie<br>ArtroFlex <em>ACTIVE</em></h2>
+    <p>Eine einfache Möglichkeit, Ihre Gelenke zu pflegen und zu einem aktiven Leben zurückzukehren.</p>
+    <ul class="check-list">
+     <li><span class="ic"><svg class="i"><use href="#i-knee"/></svg></span>Lindert Schmerzen und Steifheit</li>
+     <li><span class="ic"><svg class="i"><use href="#i-run"/></svg></span>Verbessert die Beweglichkeit der Gelenke</li>
+     <li><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span>Schützt den Knorpel</li>
+     <li><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span>Natürliche Formel mit ausgewählten Inhaltsstoffen</li>
+    </ul>
+   </div>
+   <div class="order-pack"><img src="assets/img/order-pack.jpg" width="459" height="445" alt="Dose und Packung ArtroFlex ACTIVE mit Kapseln" loading="lazy"></div>
+   <aside class="card order-card" aria-label="Bestellformular" data-track="sec-form">
+    <span class="badge">RABATT -50%</span>
+    <span class="old">78 €</span>
+    <p class="price">39 €</p>
+   <div class="lead" data-lead-root="main">
+    <div data-f="card">
+     <form class="order-form" data-f="form" action="api/lead.php" method="post" novalidate aria-label="Bestellformular unten">
+      <div class="field">
+       <input id="order-name" data-f="name" name="name" type="text" autocomplete="name" autocapitalize="words" maxlength="60" placeholder="Vor- und Nachname" aria-label="Vor- und Nachname" required aria-describedby="main-name-err">
+       <p class="field-err" id="main-name-err" data-f="name-err" hidden>Bitte geben Sie Ihren Namen ein.</p>
+      </div>
+      <div class="field">
+       <div class="phone"><span class="phone-pre" aria-hidden="true">+49</span><input id="main-phone" data-f="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="18" placeholder="Telefonnummer" aria-label="Telefonnummer, Ländervorwahl +49 ist bereits eingetragen" required aria-describedby="main-phone-err"></div>
+       <p class="field-err" id="main-phone-err" data-f="phone-err" hidden>Bitte geben Sie eine gültige Telefonnummer ein.</p>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="main-website">Leer lassen</label><input id="main-website" data-f="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="field consent" data-f="consent-field">
+       <input id="main-consent" data-f="consent" name="consent" type="checkbox" value="1" checked aria-describedby="main-consent-err">
+       <label for="main-consent">Ich habe die <a href="privacy.html" target="_blank" rel="noopener" data-track="link-privacy-main">Datenschutzerklärung</a> gelesen und bitte um einen telefonischen Rückruf mit Informationen zu ArtroFlex ACTIVE.</label>
+       <p class="field-err" id="main-consent-err" data-f="consent-err" hidden>Bitte bestätigen Sie Ihre Anfrage, bevor Sie fortfahren.</p>
+      </div>
+      <p class="form-error" data-f="error" role="alert" hidden>Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.</p>
+      <button type="submit" data-f="submit" data-track="btn-submit-main"><span class="btn-label">JETZT BESTELLEN</span><span class="btn-busy" aria-hidden="true">Wird gesendet…</span></button>
+     </form>
+    </div>
+    <div class="success" data-f="success" hidden tabindex="-1">
+     <div class="success-ico" aria-hidden="true">✓</div>
+     <p class="success-title">Anfrage erhalten!</p>
+     <p>Unser Berater ruft Sie unter der Nummer <strong data-f="success-phone"></strong> an.</p>
+    </div>
+   </div>
+    <div class="perks">
+     <div><svg class="i"><use href="#i-box"/></svg>Bezahlung<br>bei Lieferung</div>
+     <div><svg class="i"><use href="#i-truck"/></svg>Kostenloser<br>Versand</div>
+    </div>
+    <p class="note">Ein Berater ruft Sie an, um Ihre Anfrage zu bestätigen.</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/track.js"></script>
+</body>
+</html>

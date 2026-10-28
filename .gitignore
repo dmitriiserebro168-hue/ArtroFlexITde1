@@ -1,0 +1,7 @@
+# local preview config (points to a temp script)
+.claude/
+# secrets and server-side data (secrets.php is built by GitHub Actions on deploy)
+api/secrets.php
+_data/logs/
+_data/requests/
+_data/*.json

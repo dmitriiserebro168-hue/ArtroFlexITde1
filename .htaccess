@@ -1,0 +1,5 @@
+# Служебный файл синхронизации GitHub Actions и скрытые файлы — не отдавать
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+Options -Indexes

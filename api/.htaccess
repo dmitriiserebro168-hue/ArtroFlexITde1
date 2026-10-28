@@ -1,0 +1,4 @@
+# Закрыть прямой доступ к настройкам и секретам
+<FilesMatch "^(config|db|secrets)\.php$">
+  Require all denied
+</FilesMatch>

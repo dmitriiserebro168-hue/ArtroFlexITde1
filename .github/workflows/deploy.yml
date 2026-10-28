@@ -1,0 +1,82 @@
+# Выкладка на de1.artro-flex.com по FTPS при каждом push в main (и вручную: Actions → Run workflow).
+# Загружаются только изменённые файлы.
+#
+# Секреты репозитория (Settings → Secrets and variables → Actions → Secrets):
+#   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD — FTP-аккаунт de1 (de1@artro-flex.com) (обязательно)
+#   FTP_SERVER_DIR  — папка сайта относительно корня FTP-аккаунта (необязательно, по умолчанию ./)
+#   DB_PASSWORD     — пароль пользователя MySQL artrofle_de1 (журнал заявок и аналитика)
+#   DB_NAME, DB_USER — необязательно, по умолчанию artrofle_de1
+#   LEADCENTER_KEY  — API-ключ источника «de1» из LeadCenter → Источники (отправка лидов)
+#   STATS_PASSWORD  — пароль дашборда /admin/stats.php
+#   WEBVORK_TOKEN   — необязательно: запасная отправка в Webvork напрямую, если LeadCenter не ответил
+# Из них при деплое собирается api/secrets.php (закрыт от веба api/.htaccess). В git он не попадает.
+
+name: Deploy to artro-flex.com
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check PHP syntax
+        run: for f in api/*.php admin/*.php; do php -l "$f"; done
+
+      - name: Build api/secrets.php from repository secrets
+        env:
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          LEADCENTER_KEY: ${{ secrets.LEADCENTER_KEY }}
+          STATS_PASSWORD: ${{ secrets.STATS_PASSWORD }}
+          WEBVORK_TOKEN: ${{ secrets.WEBVORK_TOKEN }}
+        run: |
+          for s in DB_PASSWORD LEADCENTER_KEY STATS_PASSWORD; do
+            [ -n "${!s}" ] || echo "::warning::Секрет $s не задан"
+          done
+          # var_export экранирует значения, поэтому любые символы в паролях безопасны
+          php -r '
+            $e = fn($k) => (string)getenv($k);
+            $c = [
+              "db" => ["name" => $e("DB_NAME"), "user" => $e("DB_USER"), "pass" => $e("DB_PASSWORD")],
+              "leadcenter" => ["key" => $e("LEADCENTER_KEY")],
+              "stats_password" => $e("STATS_PASSWORD"),
+              "token" => $e("WEBVORK_TOKEN"),
+            ];
+            file_put_contents("api/secrets.php", "<?php\n// Собрано GitHub Actions из секретов репозитория. Не редактировать.\nreturn " . var_export($c, true) . ";\n");
+          '
+          php -l api/secrets.php
+
+      - name: Upload site over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftps
+          # Folder on the server relative to the FTP account's home; "./" = the home itself
+          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          # Не выкладываем внутренние файлы и не трогаем данные, которые живут на сервере
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .claude/**
+            README.md
+            config.example.php
+            _data/logs/**
+            _data/requests/**
+            _data/*.json
