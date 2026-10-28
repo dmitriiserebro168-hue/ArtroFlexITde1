@@ -181,6 +181,7 @@ function db_counts(array $cfg): ?array
             'track_last_utc'  => $pdo->query('SELECT MAX(created_at) FROM track_event')->fetchColumn(),
             // ВРЕМЕННО для отладки: последние события без персональных данных
             'track_recent'    => $pdo->query("SELECT CONCAT(created_at, ' ', LEFT(pv, 5), ' ', device, ' ', type, ' ', el, ' v', val, ' t', t, ' ', src) FROM track_event ORDER BY id DESC LIMIT 80")->fetchAll(PDO::FETCH_COLUMN),
+            'lead_recent'     => $pdo->query("SELECT CONCAT(created_at, ' ', status, ' ', IFNULL(landing_version, '-'), ' | ', IFNULL(referer, '-'), ' | ', IFNULL(user_agent, '-')) FROM lead_log ORDER BY id DESC LIMIT 5")->fetchAll(PDO::FETCH_COLUMN),
         ];
     } catch (Throwable $e) {
         return ['error' => $e->getMessage()];
