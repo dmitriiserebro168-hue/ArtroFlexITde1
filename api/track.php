@@ -67,6 +67,12 @@ if ($pdo && $rows) {
     } catch (Throwable $e) {
         if ($pdo->inTransaction()) $pdo->rollBack();
         error_log('track.php: insert failed: ' . $e->getMessage());
+        // Последняя ошибка записи — для lead.php?health=config
+        @file_put_contents(rtrim($cfg['data_dir'], '/\\') . '/track_last_error.json',
+            json_encode(['at' => gmdate('c'), 'error' => mb_substr($e->getMessage(), 0, 300)], JSON_UNESCAPED_UNICODE), LOCK_EX);
     }
+} elseif ($rows) {
+    @file_put_contents(rtrim($cfg['data_dir'], '/\\') . '/track_last_error.json',
+        json_encode(['at' => gmdate('c'), 'error' => 'no db: ' . ($GLOBALS['LP_DB_ERROR'] ?? '')], JSON_UNESCAPED_UNICODE), LOCK_EX);
 }
 http_response_code(204);

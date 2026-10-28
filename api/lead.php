@@ -161,8 +161,28 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'GET' && ($_GET['health'] ?? '') === 
         'leadcenter_set'    => !empty($cfg['leadcenter']['url']) && !empty($cfg['leadcenter']['key']),
         'leadcenter_ping'   => leadcenter_ping($cfg),
         'leadcenter_last'   => json_decode((string)@file_get_contents($dataDir . '/leadcenter_last.json'), true),
+        'db_counts'         => db_counts($cfg),
+        'track_last_error'  => json_decode((string)@file_get_contents($dataDir . '/track_last_error.json'), true),
         'php'               => PHP_VERSION,
     ]);
+}
+
+/** Сколько записей за сутки в журнале и аналитике — только числа и время, без имён и телефонов. */
+function db_counts(array $cfg): ?array
+{
+    $pdo = lp_db($cfg);
+    if (!$pdo) return null;
+    try {
+        $day = 'created_at >= UTC_TIMESTAMP() - INTERVAL 1 DAY';
+        return [
+            'lead_log_24h'    => $pdo->query("SELECT status, COUNT(*) FROM lead_log WHERE $day GROUP BY status")->fetchAll(PDO::FETCH_KEY_PAIR),
+            'track_24h'       => $pdo->query("SELECT type, COUNT(*) FROM track_event WHERE $day GROUP BY type")->fetchAll(PDO::FETCH_KEY_PAIR),
+            'track_clicks_24h'=> $pdo->query("SELECT el, COUNT(*) FROM track_event WHERE type IN ('click','form') AND $day GROUP BY el")->fetchAll(PDO::FETCH_KEY_PAIR),
+            'track_last_utc'  => $pdo->query('SELECT MAX(created_at) FROM track_event')->fetchColumn(),
+        ];
+    } catch (Throwable $e) {
+        return ['error' => $e->getMessage()];
+    }
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {

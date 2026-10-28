@@ -74,9 +74,9 @@ $REGISTRY = [
 // Формы: события form = <форма>-<шаг> (track.js)
 $FORMS = ['hero' => 'Первый экран', 'main' => 'Основная (внизу)'];
 $FORM_STEPS = [
-    'focus-name'    => 'Нажали в поле «Nome»',
+    'focus-name'    => 'Нажали в поле имени',
     'focus-phone'   => 'Нажали в поле телефона',
-    'submit'        => 'Нажали «ORDINA ORA»',
+    'submit'        => 'Нажали «JETZT BESTELLEN»',
     'error-name'    => 'Ошибка имени',
     'error-phone'   => 'Ошибка телефона',
     'error-consent' => 'Сняли галочку согласия',
